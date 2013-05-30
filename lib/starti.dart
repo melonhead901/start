@@ -645,7 +645,7 @@ String execute(String bytecode, { bool debug: false }) {
   if (!counters.isEmpty) {
     counts = "- Counts : ";
     var keys = counters.keys.toList();
-    keys.sort();
+    keys.sort((a, b) => a.toString().compareTo(b.toString()));
     for (var key in keys) {
       counts += "\n  $key: ${counters[key]}";
     }
